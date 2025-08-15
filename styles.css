@@ -1,0 +1,87 @@
+/* Base */
+:root{
+  --bg:#0b0f15;
+  --card:#101826;
+  --muted:#9aa4b2;
+  --text:#e5ecf4;
+  --brand:#47b16b;
+  --brand-2:#37a0f7;
+  --accent: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1000px 600px at 80% -10%, rgba(55,160,247,.15), transparent 50%) , radial-gradient(1000px 600px at -10% 10%, rgba(71,177,107,.15), transparent 50%), var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.section{padding:80px 0}
+.section.alt{background: rgba(255,255,255,0.02)}
+
+/* Header */
+.site-header{position:sticky;top:0;backdrop-filter: blur(8px); background: rgba(11,15,21,.7); z-index:50; border-bottom: 1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:700}
+.logo{width:36px;height:36px}
+.logo.small{width:28px;height:28px}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{color:var(--text);text-decoration:none;opacity:.9}
+.nav-links .btn.small{padding:8px 12px;border-radius:12px}
+.hamburger{display:none;background:none;border:0;cursor:pointer}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);margin:5px 0}
+
+/* Hero */
+.hero{padding:90px 0 60px;background:
+    radial-gradient(600px 300px at 20% 0%, rgba(71,177,107,.18), transparent 60%),
+    radial-gradient(600px 300px at 90% 0%, rgba(55,160,247,.18), transparent 60%);
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:48px;line-height:1.1;margin:0 0 12px}
+.hero p{font-size:18px;color:#d8e1ea;margin:0 0 16px}
+.badges{list-style:none;display:flex;gap:16px;margin:16px 0 0;padding:0;color:#cbd5e1}
+.card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:20px; box-shadow: 0 10px 30px rgba(0,0,0,.25)}
+label{display:block;font-size:14px;color:#cbd5e1;margin:10px 0 6px}
+input,select,textarea{width:100%; padding:12px 14px; background:#0b1220; border:1px solid rgba(255,255,255,.08); border-radius:12px; color:var(--text); outline: none}
+textarea{min-height:110px;resize:vertical}
+
+.btn{display:inline-block;padding:12px 16px;border-radius:14px;background:var(--accent);color:#051018;text-decoration:none;font-weight:700;border:0;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--text)}
+.btn.block{display:block;width:100%}
+
+.icon{font-size:26px}
+.grid.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.shot .ph{height:140px;border-radius:14px;background: linear-gradient(135deg, rgba(71,177,107,.2), rgba(55,160,247,.2)); border:1px solid rgba(255,255,255,.08)}
+
+.feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.feature-list li{background:var(--card); border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.muted{color:var(--muted)}
+.tiny{font-size:12px}
+
+/* Footer */
+.site-footer{padding:40px 0 20px;border-top:1px solid rgba(255,255,255,.08);background: rgba(0,0,0,.3)}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:20px}
+.brand-inline{display:flex;align-items:center;gap:12px}
+.links{list-style:none;margin:0;padding:0}
+.links li{margin:6px 0}
+.links a{color:var(--text);text-decoration:none;opacity:.9}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid.cards{grid-template-columns:repeat(2,1fr)}
+  .grid.gallery{grid-template-columns:repeat(2,1fr)}
+  .feature-list{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .nav-links{display:none;position:absolute;right:20px;top:64px;background:var(--card);padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.08);flex-direction:column;width:220px}
+  .hamburger{display:block}
+  .nav-open .nav-links{display:flex}
+}
